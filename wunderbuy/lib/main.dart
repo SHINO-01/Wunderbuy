@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wunderbuy/utils/themes/theme.dart';
 
 void main() {
   runApp(const Wunderbuy());
@@ -9,6 +10,10 @@ class Wunderbuy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      themeMode: ThemeMode.system,
+      theme: CAppTheme.lightTheme,
+      darkTheme: CAppTheme.darkTheme,
+    );
   }
 }
