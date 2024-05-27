@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:wunderbuy/utils/themes/custom_themes/app_bar_theme.dart";
+import "package:wunderbuy/utils/themes/custom_themes/bottom_sheet_theme.dart";
 import "package:wunderbuy/utils/themes/custom_themes/elevated_button_theme.dart";
 import "package:wunderbuy/utils/themes/custom_themes/text_theme.dart";
 
@@ -15,7 +16,8 @@ class CAppTheme {
     scaffoldBackgroundColor: Colors.white,
     textTheme: CTextTheme.lightTextTheme,
     elevatedButtonTheme: CElevatedButtonTheme.lightElevatedButtonTheme,
-    appBarTheme: CAppBarTheme.lightAppBarTheme
+    appBarTheme: CAppBarTheme.lightAppBarTheme,
+    bottomSheetTheme: CBottomSheetTheme.lightBottomSheetTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -25,6 +27,7 @@ class CAppTheme {
     scaffoldBackgroundColor: Colors.black54,
     textTheme: CTextTheme.darkTextTheme,
     elevatedButtonTheme: CElevatedButtonTheme.darkElevatedButtonTheme,
-    appBarTheme: CAppBarTheme.darkAppBarTheme
+    appBarTheme: CAppBarTheme.darkAppBarTheme,
+    bottomSheetTheme: CBottomSheetTheme.darkBottomSheetTheme,
   );
 }
