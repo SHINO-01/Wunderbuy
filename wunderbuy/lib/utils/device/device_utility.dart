@@ -68,32 +68,34 @@ class CDeviceUtils {
   }
 
   static Future<bool> isPhysicalDevice() async {
-    return defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS;
+    return defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
   }
 
-  static void vibrate(Duration duration){
+  static void vibrate(Duration duration) {
     HapticFeedback.vibrate();
-    Future.delayed(duration, ()=> HapticFeedback.vibrate());
+    Future.delayed(duration, () => HapticFeedback.vibrate());
   }
 
-  static Future<void> setPreferredOrientation(List<DeviceOrientation> orientations) async{
+  static Future<void> setPreferredOrientation(
+      List<DeviceOrientation> orientations) async {
     await SystemChrome.setPreferredOrientations(orientations);
   }
 
-  static void hideStatusBar(){
+  static void hideStatusBar() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   }
 
-  static void showStatusbar(){
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+  static void showStatusbar() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
   }
 
   static Future<bool> hasInternetConn() async {
-    try{
+    try {
       final result = await InternetAddress.lookup("google.com");
       return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
-    }on SocketException
-    catch(_){
+    } on SocketException catch (_) {
       return false;
     }
   }
@@ -102,14 +104,14 @@ class CDeviceUtils {
     return Platform.isIOS;
   }
 
-  static bool isAndroid(){
+  static bool isAndroid() {
     return Platform.isAndroid;
   }
 
   static void launchURL(String url) async {
-    if(await canLaunchUrlString(url)){
+    if (await canLaunchUrlString(url)) {
       await launchUrlString(url);
-    }else{
+    } else {
       throw "Failed to open $url";
     }
   }
