@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:wunderbuy/utils/themes/theme.dart';
+import 'app.dart';
 
+//entry point of flutter app
 void main() {
+  
+  //todo: widgets binding
+  //todo: innit local storage
+  //todo: await native splash
+  //todo: initialize firebase
+  //todo: innnit auth
   runApp(const Wunderbuy());
-}
-
-class Wunderbuy extends StatelessWidget {
-  const Wunderbuy({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      themeMode: ThemeMode.system,
-      theme: CAppTheme.lightTheme,
-      darkTheme: CAppTheme.darkTheme,
-    );
-  }
 }
