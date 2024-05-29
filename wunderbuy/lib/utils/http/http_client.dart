@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class CHttpHelper {
@@ -14,6 +15,15 @@ class CHttpHelper {
 
   static Future<Map<String, dynamic>> get(String endpoint) async {
     final response = await http.get(Uri.parse('$_baseURL/$endpoint'));
+    return _handleResponse(response);
+  }
+
+  static Future<Map<String, dynamic>> post(String endpoint, dynamic data) async{
+    final response = await http.post(
+      Uri.parse('$_baseURL/$endpoint'),
+      headers: {'Content-Type': 'application/json'},
+      body: json.encode(data),
+    );
     return _handleResponse(response);
   }
 }
