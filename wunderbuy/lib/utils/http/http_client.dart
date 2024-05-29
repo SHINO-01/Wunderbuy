@@ -40,6 +40,4 @@ class CHttpHelper {
     final response = await http.delete(Uri.parse('$_baseURL/$endpoint'));
     return _handleResponse(response);
   }
-
-  
 }
