@@ -13,5 +13,8 @@ class CSizes {
   static const double fontM = 16.0;
   static const double fontL = 18.0;
   //button sizes
-  
+
+  //spaces
+  static const double spaceBtwItemsSmall = 12.0;
+  static const double defaultSpace = 8.0;
 }
