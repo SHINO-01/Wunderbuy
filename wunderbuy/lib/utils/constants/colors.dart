@@ -2,5 +2,6 @@ import 'package:flutter/material.dart';
 
 class CColors{
   CColors._();
-  static const Color primaryColor = Color(0xFF4b68ff);
+  static const Color primaryColor = Colors.white;
+  static const Color darkMode = Colors.black;
 }
